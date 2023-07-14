@@ -19,6 +19,8 @@ function App() {
   };
 
   const renderSquare = (index) => {
+
+    
     return (
       <button className="square" onClick={() => handleSquareClick(index)}>
         {board[index]}
@@ -65,7 +67,7 @@ function App() {
   return (
     <div className="section">
       <h1 className="title">Tic Tac Toe Game</h1>
-      <div className="container">
+      <div className="container glass">
         <div className="status">{status}</div>
         <div className="row">
           {renderSquare(0)}

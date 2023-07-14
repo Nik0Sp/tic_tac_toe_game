@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>Tic Tac Toe Game</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <strong>A simple Tic Tac Toe game built with React.</strong>
+</div>
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To play the Tic Tac Toe game, follow these steps:
 
-### `npm start`
+1. Clone the repository: `git clone git@github.com:Nik0Sp/tic_tac_toe_game.git`
+2. Change directory to the project folder: `cd tic_tac_toe_game`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your browser and visit `http://localhost:3000` to play the game.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Game Rules
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The game is played on a 3x3 grid.
+- Players take turns placing their symbol (X or O) on an empty square.
+- The first player to get three of their symbols in a horizontal, vertical, or diagonal row wins the game.
+- If all squares are filled and no player has won, the game ends in a draw.
 
-### `npm test`
+##  Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App
 
-### `npm run build`
+The `App` component is the main component that renders the Tic Tac Toe game.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Manages the game state, including the game board, current player, and winner.
+- Handles square clicks and updates the game board and player state accordingly.
+- Calculates the winner based on the current game board.
+- Renders the game status, game board, and a reset button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### renderSquare
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The `renderSquare` function is a helper function that renders a single square on the game board.
 
-### `npm run eject`
+- Accepts the index of the square as a parameter.
+- Renders a button with the square's value and sets the `handleSquareClick` function as the click event handler.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### handleSquareClick
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The `handleSquareClick` function is called when a square is clicked.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Checks if the clicked square is already filled or if there is a winner. If so, returns early.
+- Creates a copy of the game board, updates the clicked square with the current player's symbol, and sets the new board state.
+- Updates the current player to the next player (X or O).
+- Calculates if there is a winner based on the updated board and sets the winner state.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### calculateWinner
 
-## Learn More
+The `calculateWinner` function checks for a winning combination on the game board.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Accepts the current game board as a parameter.
+- Checks all possible winning combinations using a predefined list of winning lines.
+- If a winning combination is found, returns the symbol of the winner (X or O). Otherwise, returns `null`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### resetGame
 
-### Code Splitting
+The `resetGame` function is called when the reset button is clicked.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Resets the game state to the initial values, including the game board, current player, and winner.
 
-### Analyzing the Bundle Size
+##  Contributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions to this project are welcome. If you have any ideas, improvements, or bug fixes, feel free to open an issue or submit a pull request.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use and modify the code as per the license terms.
