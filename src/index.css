@@ -67,6 +67,11 @@ body {
   text-transform: uppercase;
 }
 
+.reset-btn:focus {
+  color: #333;
+  background-color: lightgreen;
+}
+
 
 .glass {
   background: linear-gradient(135deg,

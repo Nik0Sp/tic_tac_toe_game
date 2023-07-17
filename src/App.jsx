@@ -19,8 +19,6 @@ function App() {
   };
 
   const renderSquare = (index) => {
-
-    
     return (
       <button className="square" onClick={() => handleSquareClick(index)}>
         {board[index]}
@@ -50,9 +48,7 @@ function App() {
   };
 
   const resetGame = () => {
-    setBoard(Array(9).fill(null));
-    setPlayer("X");
-    setWinner(null);
+    window.location.reload();
   };
 
   let status;
